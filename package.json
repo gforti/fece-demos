@@ -10,6 +10,6 @@
   "license": "MIT",
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.0.3",
-    "fece": "0.0.4"
+    "fece": "0.0.5"
   }
 }
