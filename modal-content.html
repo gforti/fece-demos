@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+        <title>FECE DEMO - Modal Content</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+            
+        <button id="show">show</button>
+        <modal-content data-show="false">Modal content</modal-content>
+          
+        <script type="module" src="node_modules/fece/modal-content.js"></script>        
+        <script>
+             document.getElementById('show').addEventListener('click', ()=>{
+                document.querySelector('modal-content').dataset.show = true
+            })  
+        </script>
+    </body>
+</html>

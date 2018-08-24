@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+        <title>FECE DEMO - Circular Percentage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+                        
+            .theme-change {
+                --surface: #cfd;
+                --accent: #4CC790;
+            }            
+            
+            button {
+                background-color: #ff9f00;
+                cursor: pointer;
+                margin: 1rem;                
+            }
+            
+             div {
+                width: 230px;
+            }
+        </style>
+        <script type="module" src="node_modules/fece/circular-percentage.js"></script>
+    </head>
+    <body>
+                
+        <button id="update">Change</button>
+
+        <div><circular-percentage data-percent="59"></circular-percentage></div>
+        
+        <p>Scroll down</p>
+        
+         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> 
+         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        
+         <div> <circular-percentage data-percent="99" class="theme-change"></circular-percentage></div>
+        
+        <script>
+            
+            document.getElementById('update').addEventListener('click', ()=>{
+                document.querySelectorAll('circular-percentage').forEach( (elem) => {
+                    elem.dataset.percent = Math.floor(Math.random() * 100) +1
+                })
+            })     
+        </script>
+     
+    
+    </body>
+</html>

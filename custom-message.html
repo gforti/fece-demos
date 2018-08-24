@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+        <title>FECE DEMO - Custom Message</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            :root {
+                --primary: blue;
+                --accent: red;
+                --on-primary: white;
+                --on-accent: black;
+                --background: white;
+                --on-background: #777;
+                --surface: #aaa;
+                --on-surface: #999;
+            }
+            
+            .theme-change {
+                --primary: red;
+                --on-primary: black;                
+                --surface: #eee;
+                --on-surface: #999;
+            }
+            
+            .hide {
+                display: none;
+            }
+            
+            button {
+                background-color: #ff9f00;
+                cursor: pointer;
+                margin: 1rem;
+                
+            }
+        </style>
+        <script type="module" src="node_modules/fece/custom-message.js"></script>
+    </head>
+    <body>
+        
+        
+        <button id="show">Show Custom Messages</button>
+
+        <custom-message>
+            <span slot="header">header text</span>
+            <span slot="message">body text stuff</span>
+        </custom-message>
+
+        <br /><br />
+        
+        <custom-message class="theme-change">
+            <span slot="header">header text</span>
+            <span slot="message">body text stuff</span>
+        </custom-message>
+
+        <script>
+            document.querySelectorAll('custom-message').forEach( (elem) => {
+                elem.addEventListener('delete-clicked', ()=>{
+                    console.log('delete clicked')
+                    elem.classList.add('hide')
+                })
+            })
+
+            document.getElementById('show').addEventListener('click', ()=>{
+                document.querySelectorAll('custom-message').forEach( (elem) => {
+                    elem.classList.remove('hide')
+                })
+            })     
+        </script>
+     
+    
+    </body>
+</html>
