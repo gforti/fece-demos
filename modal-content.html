@@ -5,11 +5,19 @@
         <title>FECE DEMO - Modal Content</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .modal-div {
+                padding: 1rem;
+                background-color: #efe;
+            }
+        </style>
     </head>
     <body>
             
         <button id="show">show</button>
-        <modal-content data-show="false">Modal content</modal-content>
+        <modal-content data-show="false">
+            <div class="modal-div">Modal content</div>
+        </modal-content>
           
         <script type="module" src="node_modules/fece/modal-content.js"></script>        
         <script>
